@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Supermarkt Producten</title>
+</head>
+<body>
+    <!-- lees een array uit met een for-loop en toon op een html pagina. -->
+    <!-- Bestaande HTML <p> element waarin we de productinformatie willen plaatsen -->
+    <p id="productenContainer"></p>
+
+    <script>
+        // Voorbeeld array met supermarktproducten
+        var supermarktProducten = [
+            { naam: 'Melk', prijs: 1.5 },
+            { naam: 'Brood', prijs: 2.0 },
+            { naam: 'Eieren', prijs: 3.0 },
+            { naam: 'Appels', prijs: 0.75 },
+            { naam: 'Pasta', prijs: 1.2 }
+        ];
+
+        // Referentie naar het bestaande HTML-element waarin we de productinformatie willen plaatsen
+        var productenContainer = document.getElementById('productenContainer');
+
+        // Uitlezen van de array en toevoegen aan de HTML
+        for (var i = 0; i < supermarktProducten.length; i++) {
+            var product = supermarktProducten[i];
+            // Maak een string met de productinformatie
+            var productInfo = 'Productnaam: ' + product.naam + ', Prijs: €' + product.prijs.toFixed(2);
+            // Voeg de productinformatie toe aan het bestaande <p> element met innerHTML
+            productenContainer.innerHTML += productInfo + '<br>'; // Voeg <br> toe voor een nieuwe regel
+        }
+    </script>
+</body>
+</html>
